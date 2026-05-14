@@ -17,6 +17,9 @@ public class TrayService : IDisposable
     public event Action? ExitRequested;
     public event Action? ToggleTopmostRequested;
     public event Action? ToggleAutoTransparencyRequested;
+    public event Action? SettingsRequested;
+    public event Action? TogglePassthroughRequested;
+    public event Action? ToggleStartWithWindowsRequested;
 
     public TrayService(AppSettings settings, SettingsService settingsService)
     {
@@ -56,6 +59,8 @@ public class TrayService : IDisposable
         _contextMenu.Items.Add(new System.Windows.Forms.ToolStripMenuItem("Show/Hide", null,
             (_, _) => ShowWindowRequested?.Invoke()));
 
+        _contextMenu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
+
         var topmostItem = new System.Windows.Forms.ToolStripMenuItem("Topmost",
             null, (_, _) => ToggleTopmostRequested?.Invoke())
         {
@@ -70,6 +75,25 @@ public class TrayService : IDisposable
         };
         _contextMenu.Items.Add(transparencyItem);
 
+        var passthroughItem = new System.Windows.Forms.ToolStripMenuItem("Mouse Passthrough",
+            null, (_, _) => TogglePassthroughRequested?.Invoke())
+        {
+            Checked = false
+        };
+        _contextMenu.Items.Add(passthroughItem);
+
+        _contextMenu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
+
+        var startupItem = new System.Windows.Forms.ToolStripMenuItem("Start with Windows",
+            null, (_, _) => ToggleStartWithWindowsRequested?.Invoke())
+        {
+            Checked = StartupService.IsAutoStartEnabled()
+        };
+        _contextMenu.Items.Add(startupItem);
+
+        _contextMenu.Items.Add(new System.Windows.Forms.ToolStripMenuItem("Settings", null,
+            (_, _) => SettingsRequested?.Invoke()));
+
         _contextMenu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
 
         _contextMenu.Items.Add(new System.Windows.Forms.ToolStripMenuItem("Exit", null,
@@ -78,16 +102,26 @@ public class TrayService : IDisposable
 
     public void UpdateContextMenu()
     {
-        if (_disposed) return;
+        if (_disposed || _contextMenu.Items.Count < 7) return;
 
-        if (_contextMenu.Items.Count >= 3)
-        {
-            if (_contextMenu.Items[1] is System.Windows.Forms.ToolStripMenuItem topmostItem)
-                topmostItem.Checked = _settings.Window.Topmost;
+        // Index 2: Topmost
+        if (_contextMenu.Items[2] is System.Windows.Forms.ToolStripMenuItem topmostItem)
+            topmostItem.Checked = _settings.Window.Topmost;
 
-            if (_contextMenu.Items[2] is System.Windows.Forms.ToolStripMenuItem transparencyItem)
-                transparencyItem.Checked = _settings.Appearance.AutoTransparency;
-        }
+        // Index 3: Auto Transparency
+        if (_contextMenu.Items[3] is System.Windows.Forms.ToolStripMenuItem transparencyItem)
+            transparencyItem.Checked = _settings.Appearance.AutoTransparency;
+
+        // Index 6: Start with Windows
+        if (_contextMenu.Items[6] is System.Windows.Forms.ToolStripMenuItem startupItem)
+            startupItem.Checked = StartupService.IsAutoStartEnabled();
+    }
+
+    public void SetPassthroughChecked(bool isChecked)
+    {
+        if (_disposed || _contextMenu.Items.Count < 5) return;
+        if (_contextMenu.Items[4] is System.Windows.Forms.ToolStripMenuItem passthroughItem)
+            passthroughItem.Checked = isChecked;
     }
 
     private static Icon CreateTrayIcon()

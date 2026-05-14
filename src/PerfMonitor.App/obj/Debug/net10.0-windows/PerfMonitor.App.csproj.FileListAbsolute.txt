@@ -22,3 +22,9 @@ E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Deb
 E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\PerfMonitor.App.pdb
 E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\PerfMonitor.App.genruntimeconfig.cache
 E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\ref\PerfMonitor.App.dll
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\Views\SettingsWindow.baml
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\Views\Sparkline.baml
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\Views\SettingsWindow.g.cs
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\Views\Sparkline.g.cs
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\PerfMonitor.App_MarkupCompile.lref
+E:\OneDrive - E3(MSDN)\ClaudeCodeProjects\SysMonitor\src\PerfMonitor.App\obj\Debug\net10.0-windows\PerfMonitor.App.sourcelink.json

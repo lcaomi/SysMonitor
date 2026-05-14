@@ -44,6 +44,7 @@ public class CpuMetricProvider : IMetricProvider, IDisposable
                 Name = Name,
                 Value = $"{usage:F1}%",
                 Detail = $"{usage:F0}%",
+                NumericValue = usage,
                 IsAvailable = true
             });
         }

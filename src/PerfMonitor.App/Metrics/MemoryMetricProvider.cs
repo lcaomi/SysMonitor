@@ -48,6 +48,7 @@ public class MemoryMetricProvider : IMetricProvider, IDisposable
                 Name = Name,
                 Value = $"{usedMB / 1024:F1} / {totalMB / 1024:F1} GB  {percent:F0}%",
                 Detail = $"{percent:F0}%",
+                NumericValue = percent,
                 IsAvailable = true
             });
         }

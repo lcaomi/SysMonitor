@@ -6,4 +6,6 @@ public class MetricSnapshot
     public string Value { get; init; } = string.Empty;
     public string? Detail { get; init; }
     public bool IsAvailable { get; init; } = true;
+    /// <summary>Numeric representation for sparkline charting (0-100 or absolute).</summary>
+    public double NumericValue { get; init; }
 }
