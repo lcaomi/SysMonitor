@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9SsG/P+yUZo=",
+  "success": true,
+  "projectFilePath": "E:\\OneDrive - E3(MSDN)\\ClaudeCodeProjects\\SysMonitor\\src\\PerfMonitor.App\\PerfMonitor.App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\system.management\\10.0.0-preview.2.25163.2\\system.management.10.0.0-preview.2.25163.2.nupkg.sha512"
+  ],
+  "logs": []
+}

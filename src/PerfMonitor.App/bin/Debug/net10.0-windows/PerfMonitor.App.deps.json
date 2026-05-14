@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PerfMonitor.App/1.0.0": {
+        "dependencies": {
+          "System.Management": "10.0.0-preview.2.25163.2"
+        },
+        "runtime": {
+          "PerfMonitor.App.dll": {}
+        }
+      },
+      "System.Management/10.0.0-preview.2.25163.2": {
+        "runtime": {
+          "lib/net10.0/System.Management.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net10.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16302"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PerfMonitor.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Management/10.0.0-preview.2.25163.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MOeIlyTlUoHID2tspUV80HwvtcPDrObcd2PFvka5JtNc+iOCF1RQYoXjskbvVUBPgaXCIPQu6fbRl52fdFm20w==",
+      "path": "system.management/10.0.0-preview.2.25163.2",
+      "hashPath": "system.management.10.0.0-preview.2.25163.2.nupkg.sha512"
+    }
+  }
+}
